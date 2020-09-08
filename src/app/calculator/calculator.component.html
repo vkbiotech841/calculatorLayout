@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <strong>Topics</strong>
+
+            <div class="sidebarText my-3">
+                <div class="my-2">
+                    <img src="assets/images/chevron_down.svg" alt="" class="chevron-down">
+                    Pre-Algebra
+                </div>
+                <div class="my-2">
+                    <img src="assets/images/chevron_down.svg" alt="" class="chevron-down">
+                    Algebra
+                </div>
+                <div class="my-2">
+                    <img src="assets/images/chevron_down.svg" alt="" class="chevron-down">
+                    Trigonometry
+                </div>
+                <div class="my-2">
+                    <img src="assets/images/chevron_down.svg" alt="" class="chevron-down">
+                    Calculus
+                </div>
+            </div>
+
+            <div class="sidebarText my-5">
+                <div class="my-2">
+                    <span>X<sup>2</sup></span>
+                    Algebra Calculator
+                </div>
+                <div class="my-2">
+                    <span>Θ</span>
+                    Trigonometry Calculator
+                </div>
+                <div class="my-2">
+                    <span>∬</span>
+                    Calculus Calculator
+                </div>
+                <div class="my-2">
+                    <span>[a,b]</span>
+                    Matrix Calculus
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <div>
+                <P>
+                    <label for="texteditor">Scientific Calculator</label>
+                </P>
+
+                <div class="textCollection">
+                    <span *ngFor="let notation of textCollection;index as i">
+                        <span [innerHTML]="notation"></span>
+                    </span>
+                </div>
+                <p>Please click here to open the calculator</p>
+                <input type="text" class="textInput" (click)="showCalculator()">
+
+                <img src="assets/images/keyboard.png" alt="" class="keyboard" (click)="showCalculator()">
+                <img src="assets/images/enter.png" alt="" class="enter">
+
+
+                <div class="my-3 calculator-bg" *ngIf="calculatorStatus">
+                    <div>
+                        <mat-tab-group animationDuration="0ms">
+
+                            <mat-tab label="Algebra">
+                                <div style="margin-top: 2%;">
+                                    <div class="flex-button" style="width:110%;">
+
+                                        <button class={{greyText.buttonBg}}
+                                            *ngFor="let greyText of calculatorText; let i = index" style="margin: 4px;"
+                                            (click)="displayClickText(i)">
+                                            <span>{{greyText.name}}</span>
+                                        </button>
+
+
+                                    </div>
+                                </div>
+                            </mat-tab>
+
+                            <mat-tab label="Trigonometry">Trigonometry</mat-tab>
+                            <mat-tab label="Statistics">Statistics</mat-tab>
+                            <mat-tab label="Calculus">Calculus</mat-tab>
+                            <mat-tab label="Matrices">Matrices</mat-tab>
+                            <mat-tab label="Variable">Variable</mat-tab>
+                            <mat-tab label="List">List</mat-tab>
+                        </mat-tab-group>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
