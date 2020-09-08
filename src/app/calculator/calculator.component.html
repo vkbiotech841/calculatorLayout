@@ -1,5 +1,12 @@
 <div class="container">
-    <div class="row">
+    <span>HURREY</span>
+    <div class="displayFlex secondary" style="cursor: pointer;">
+        <div class="mr-5">Solve</div>
+        <div class="mr-5">Practice</div>
+        <div>Download</div>
+    </div>
+    <div class="row my-5">
+
         <div class="col-md-3">
             <strong>Topics</strong>
 
@@ -42,24 +49,97 @@
             </div>
 
         </div>
+
         <div class="col-md-9">
             <div>
-                <P>
-                    <label for="texteditor">Scientific Calculator</label>
-                </P>
-
                 <div class="textCollection">
                     <span *ngFor="let notation of textCollection;index as i">
                         <span [innerHTML]="notation"></span>
                     </span>
                 </div>
-                <p>Please click here to open the calculator</p>
                 <input type="text" class="textInput" (click)="showCalculator()">
-
                 <img src="assets/images/keyboard.png" alt="" class="keyboard" (click)="showCalculator()">
                 <img src="assets/images/enter.png" alt="" class="enter">
 
 
+
+                <!-- Question card -->
+                <div class="flexSpaceBetween">
+                    <div class="card my-3 question-card" style="width: 34rem;">
+                        <div class="m-3">
+                            <h5 class="card-title">EVALUTE</h5>
+                            <h6 class="card-subtitle mb-2 text-muted my-1">
+                                3X<sup>4</sup>
+                            </h6>
+                        </div>
+                        <button class="evaluteTextInput text-muted" (click)="toggleSolution()">
+                            <img src="assets/images/arrowUp.svg" alt="" class="arrowUp">
+                            Hide steps
+                        </button>
+                        <div class="m-3 my-1" *ngIf="solutionStatus">
+                            <div style="display: flex; justify-content: space-between;">
+                                <div>SOLUTION STEPS</div>
+                                <div style="cursor: pointer;" class="text-muted">
+                                    <img src="assets/images/volumeButton.svg" alt="" style="width: 80%;">
+                                </div>
+                            </div>
+                            <br>
+                            <p>x.x<sup>2</sup>. 3x</p>
+                            <div class="blogView">
+                                <p class="ml-4">
+                                    To multiply powers of the same base,add their exponents. Add 1 and 2 to get 3.
+                                </p>
+                            </div>
+                            <p>x<sup>3</sup> X 3x</p>
+                            <div class="blogView">
+                                <p class="ml-4">
+                                    To multiply powers of the same base,add their exponents. Add 3 and 1 to get 4.
+                                </p>
+                            </div>
+                            <p>x<sup>4</sup> X 3</p>
+                        </div>
+                    </div>
+
+                    <!-- similarProblem-card  -->
+                    <div>
+                        <div class="my-3">
+                            <strong>SIMILAR PROBLEM</strong>
+                        </div>
+                        <div class="card my-1 similarProblem-card" style="width: 15rem; border-radius: 5px;"
+                            *ngFor="let similarQuestion of similarQuestions">
+                            <p class="card-text m-2">
+                                {{similarQuestion.question}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- graph-card -->
+                <div class="card my-3 graph-card " style="width: 34rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">GRAPH</h5>
+                        <canvas id="myLineGraph" width="500" height="300">
+                        </canvas>
+                    </div>
+                </div>
+
+
+
+                <!-- quiz-card -->
+                <div class="card my-3 quiz-card" style="width: 34rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">QUIZ</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Polynomial</h6>
+                        <p class="card-text">
+                            10 problems similar to:
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Calculator -->
                 <div class="my-3 calculator-bg" *ngIf="calculatorStatus">
                     <div>
                         <mat-tab-group animationDuration="0ms">
@@ -91,5 +171,15 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="footer m-2">
+    <div class="my-3" style="margin-left: 2%;">
+        <p>We are updating our Terms of Use.</p>
+    </div>
+    <div class="my-3" style="margin-right: 5%;">
+        <button class="btn footer-btn mr-5">Learn More</button>
+        <button class="btn footer-btn">Dismiss</button>
     </div>
 </div>

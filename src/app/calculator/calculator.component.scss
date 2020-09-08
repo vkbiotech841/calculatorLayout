@@ -6,6 +6,15 @@
   border-radius: 10px;
 }
 
+.evaluteTextInput {
+  width: 100%;
+  height: 50px;
+  border-color: #65bfd6;
+  border-style: solid;
+  background: border-box;
+  outline-color: none;
+}
+
 .sidebarText {
   display: flex;
   flex-direction: column;
@@ -25,6 +34,10 @@
   border-radius: 10px;
   height: 400px;
   width: 100%;
+
+  position: absolute;
+  top: 50px;
+  z-index: 5px;
 }
 
 .cal-btn {
@@ -93,7 +106,77 @@
 
 .textCollection {
   position: absolute;
-  top: 18%;
+  top: 2%;
   left: 5%;
   width: 80%;
+}
+
+.displayFlex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flexColoumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.secondary {
+  color: #65bfd6;
+}
+
+.card {
+  border-radius: 7px;
+}
+
+.card-text {
+  font-size: 14px;
+}
+
+.question-card {
+  height: auto;
+}
+
+.similarProblem-card {
+  height: 40px;
+}
+
+.graph-card {
+  // margin-left: 2%;
+}
+
+.quiz-card {
+  // margin-left: 2%;
+}
+
+.blogView {
+  border-left: 2px solid #65bfd6;
+}
+
+.arrowUp {
+  width: 4%;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: #343a40;
+  text-align: center;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2px;
+  border-top: 1px solid #c0c0c0;
+}
+
+.footer-btn {
+  border: 1px solid;
 }
