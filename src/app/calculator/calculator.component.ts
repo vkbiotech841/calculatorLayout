@@ -291,7 +291,13 @@ export class CalculatorComponent implements OnInit {
         datasets: [
           {
             label: 'Data Set 01',
-            data: [{ x: -1, y: 9.9 }, { x: 2, y: 5 },],
+            data: [
+              { x: -2, y: 9.9 },
+              { x: 2, y: 5 },
+              { x: 0, y: 0 },
+              { x: 2, y: 5 },
+              { x: 3, y: 9.9 },
+            ],
 
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
@@ -306,6 +312,8 @@ export class CalculatorComponent implements OnInit {
       options: {
         responsive: false,
         display: true,
+        beginAtZero: true
+
 
       }
     });
